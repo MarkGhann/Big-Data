@@ -1,0 +1,23 @@
+{
+	"Store": "bookdepository",
+	"Books": [
+		{
+		"Name": "Harry Potter and the Philosopher's Stone ",
+		"properties": {
+			"For ages": "9+",
+			"Format": "Paperback | 352 pages",
+			"Dimensions": "129 x 198 x 26mm | 287g",
+			"Publication date": "16 Oct 2014",
+			"Publisher": "Bloomsbury Publishing PLC",
+			"Imprint": "Bloomsbury Childrens Books",
+			"Publication City/Country": "London, United Kingdom",
+			"Language": "English",
+			"ISBN10": "1408855658",
+			"ISBN13": "9781408855652",
+		}
+	},
+	{
+		"Count": "1"
+	}
+]
+}
