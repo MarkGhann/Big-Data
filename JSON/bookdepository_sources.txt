@@ -1,1 +1,4 @@
 ./HTML/bookdepository/0.txt
+./HTML/bookdepository/1.txt
+./HTML/bookdepository/2.txt
+./HTML/bookdepository/3.txt

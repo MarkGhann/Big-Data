@@ -1,3 +1,22 @@
+{
+	"Store": "bookdepository",
+	"Books": [
+		{
+		"Name": "Eragon ",
+		"properties": {
+			"Для возрастов": "12-17",
+			"Формат": "Paperback | 528 pages",
+			"Габориты": "129 x 198 x 33mm | 362g",
+			"Дата публикации": "06 Jan 2005",
+			"Издатель": "Penguin Random House Children's UK",
+			"Издательство": "Corgi Childrens",
+			"Страна/Город публикации": "London, United Kingdom",
+			"Язык": "English",
+			"Заметки иллюстратора": "1 map",
+			"ISBN10": "0552552097",
+			"ISBN13": "9780552552097"
+		}
+	},
 		{
 		"Name": "Harry Potter and the Philosopher's Stone ",
 		"properties": {
@@ -10,6 +29,44 @@
 			"Страна/Город публикации": "London, United Kingdom",
 			"Язык": "English",
 			"ISBN10": "1408855658",
-			"ISBN13": "9781408855652",
+			"ISBN13": "9781408855652"
 		}
 	},
+		{
+		"Name": "The Chronicles of Narnia ",
+		"properties": {
+			"Для возрастов": "12-17",
+			"Формат": "Paperback | 768 pages",
+			"Габориты": "152 x 229 x 48mm | 1,010g",
+			"Дата публикации": "29 Aug 2011",
+			"Издатель": "ZONDERVAN",
+			"Издательство": "Zonderkidz",
+			"Страна/Город публикации": "New York, NY, United States",
+			"Язык": "English",
+			"Выпуск": "New edition",
+			"Заявление об издании": "New edition",
+			"Заметки иллюстратора": "Ilustr.",
+			"ISBN10": "0066238501",
+			"ISBN13": "9780066238500"
+		}
+	},
+		{
+		"Name": "World War Z ",
+		"properties": {
+			"Формат": "Paperback | 432 pages",
+			"Габориты": "106 x 174 x 23mm | 204g",
+			"Дата публикации": "27 Sep 2011",
+			"Издатель": "Random House USA Inc",
+			"Издательство": "Random House Inc",
+			"Страна/Город публикации": "New York, United States",
+			"Язык": "English",
+			"Заявление об издании": "International edition",
+			"ISBN10": "0307888681",
+			"ISBN13": "9780307888686"
+		}
+	},
+	{
+		"Count": "4"
+	}
+]
+}

@@ -1,0 +1,3 @@
+ Хроники  Нарнии   from 2 ---> ./RTUD/azon/azon.json
+Гарри Поттер и  философский камень   from 1 ---> ./RTUD/azon/azon.json
+Эрагон   from 0 ---> ./RTUD/azon/azon.json

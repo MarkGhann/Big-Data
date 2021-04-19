@@ -7,6 +7,7 @@ import sys
 import os
 import re
 
+
 def set_azon():
     b.json_target_dir = b.main_dir + b.THERE + b.JSON_SOURCE_DIR + b.THERE + b.AZON_DIR
     b.ir_target_dir = b.main_dir + b.THERE + b.RTUD_DIR + b.THERE + b.AZON_DIR
@@ -37,18 +38,37 @@ class Converter(MRJob):
         f.close()
         #self.make_bot( '.json')
 
+    def drop_json_top_ir(self, file_name):
+        f = open(file_name,"a", encoding="utf-8")
+        f.write("{\n")
+        f.write("\t\"Store\": " + "\"" + b.area + "\",\n")
+        f.write("\t\"Books\": [\n")
+        f.close()
+        #self.make_top( '.json')
+
+    def drop_json_bot_ir(self, file_name):
+        f = open(file_name,"a", encoding="utf-8")
+        f.write("\t{\n\t\t\"Count\": " + "\"" + str(b.count_lines) + "\"\n\t}\n")
+        f.write("]\n")
+        f.write("}\n")
+        f.close()
+        #self.make_bot( '.json')
+
     def drop_data_as_json(self, file_name, title_name, pieces):
         f = open(file_name, 'a', encoding='utf-8')
         f.write("\t\t{\n")
         f.write("\t\t\"Name\": \"" + title_name.split(':')[0] + "\",\n")
         f.write("\t\t\"properties\": {\n")
-        for i in range(0, len(pieces) -1):
+        for i in range(0, len(pieces) - 1):
             l = pieces[i]  
             lfirst = l[0].replace('\n', '')
             lfirst = re.sub(r'\s+', ' ', lfirst)
             lsecond = l[1].replace('\n', '')
             lsecond = re.sub(r'\s+', ' ', lsecond)
-            f.write("\t\t\t\"" + lfirst + "\": \"" + lsecond +"\",\n")
+            sep = ','
+            if i == len(pieces) - 2:
+                sep = ''
+            f.write("\t\t\t\"" + lfirst + "\": \"" + lsecond +"\"" + sep + "\n")
         f.write("\t\t}\n\t},\n")
         f.close()
         
@@ -56,6 +76,8 @@ class Converter(MRJob):
         tr = t.Translator(b.tr_mapfile)
         simul = []
         for proop in pieces:
+            if proop == None:
+                continue
             lfirst = proop[0]
             lsecond = proop[1]
             lfirst = lfirst.replace('\n', '')
@@ -114,5 +136,7 @@ f.close()
 
 converter = Converter()
 converter.drop_json_top()
+converter.drop_json_top_ir(b.ir_target_file)
 converter.run()
 converter.drop_json_bot()
+converter.drop_json_bot_ir(b.ir_target_file)

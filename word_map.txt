@@ -36,3 +36,23 @@ Bestsellers rank:Рейтинг бестселлеров
 Возраст:Для возрастов
 Рейтинг MPAA:Рейтинг MPAA
 Время:Время
+a:
+Harry:Гарри
+Potter:Поттер
+and:и
+the:
+Philosopher's:философский
+Stone:камень
+:
+Edition:Выпуск
+Edition Statement:Заявление об издании
+Illustrations note:Заметки иллюстратора
+Eragon:Эрагон
+The:
+Chronicles:Хроники
+of:
+Narnia:Нарнии
+World:Миров
+War:Война
+war:война
+Z:Z

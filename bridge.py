@@ -5,6 +5,8 @@ AZON_DIR = 'azon'
 BOOKDEPOSITORY_DIR = 'bookdepository'
 AZON_SOURCE_FILE = 'azon_soueces.txt'
 BOOKDEPOSITORY_SOURCE_FILE = 'bookdepository_sources.txt'
+BOOKDEPOSITORY_AIM_FILE = 'bookdepository_aims.txt'
+AZON_AIM_FILE = 'azon_aims.txt'
 HERE = './'
 THERE = '/'
 
@@ -15,5 +17,7 @@ ir_target_dir = ''
 json_target_file = ''
 ir_target_file = ''
 main_dir = ''
+
+deps_file = ''
 
 count_lines = 0

@@ -2,6 +2,22 @@
 	"Store": "bookdepository",
 	"Books": [
 		{
+		"Name": "Eragon ",
+		"properties": {
+			"For ages": "12-17",
+			"Format": "Paperback | 528 pages",
+			"Dimensions": "129 x 198 x 33mm | 362g",
+			"Publication date": "06 Jan 2005",
+			"Publisher": "Penguin Random House Children's UK",
+			"Imprint": "Corgi Childrens",
+			"Publication City/Country": "London, United Kingdom",
+			"Language": "English",
+			"Illustrations note": "1 map",
+			"ISBN10": "0552552097",
+			"ISBN13": "9780552552097"
+		}
+	},
+		{
 		"Name": "Harry Potter and the Philosopher's Stone ",
 		"properties": {
 			"For ages": "9+",
@@ -13,11 +29,44 @@
 			"Publication City/Country": "London, United Kingdom",
 			"Language": "English",
 			"ISBN10": "1408855658",
-			"ISBN13": "9781408855652",
+			"ISBN13": "9781408855652"
+		}
+	},
+		{
+		"Name": "The Chronicles of Narnia ",
+		"properties": {
+			"For ages": "12-17",
+			"Format": "Paperback | 768 pages",
+			"Dimensions": "152 x 229 x 48mm | 1,010g",
+			"Publication date": "29 Aug 2011",
+			"Publisher": "ZONDERVAN",
+			"Imprint": "Zonderkidz",
+			"Publication City/Country": "New York, NY, United States",
+			"Language": "English",
+			"Edition": "New edition",
+			"Edition Statement": "New edition",
+			"Illustrations note": "Ilustr.",
+			"ISBN10": "0066238501",
+			"ISBN13": "9780066238500"
+		}
+	},
+		{
+		"Name": "World War Z ",
+		"properties": {
+			"Format": "Paperback | 432 pages",
+			"Dimensions": "106 x 174 x 23mm | 204g",
+			"Publication date": "27 Sep 2011",
+			"Publisher": "Random House USA Inc",
+			"Imprint": "Random House Inc",
+			"Publication City/Country": "New York, United States",
+			"Language": "English",
+			"Edition Statement": "International edition",
+			"ISBN10": "0307888681",
+			"ISBN13": "9780307888686"
 		}
 	},
 	{
-		"Count": "1"
+		"Count": "4"
 	}
 ]
 }

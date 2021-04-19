@@ -1,9 +1,9 @@
 class Translator:
 
     def __init__(self, sourse : str):
-        self.dict = self.downloaw_dict(sourse)
+        self.dict = self.download_dict(sourse)
 
-    def downloaw_dict(self, sourse : str):
+    def download_dict(self, sourse : str):
         d = dict()
         f = open(sourse, 'r')
         for line in f:
