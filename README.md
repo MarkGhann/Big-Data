@@ -12,6 +12,12 @@
 * Data translated from HTML to JSON is stored in the JSON dir.
 * Fully Handled data is placed in the RTUD (Ready To Use Data) dir.
 
+### HomeWork #2
+1. Matching objects and selecting the same 
+
+* Source data is in the RTUD dir.
+* Some nedded data provided in `deps_file.txt`
+
 ### How to run
 ```
 $ python3 html2ir.py
