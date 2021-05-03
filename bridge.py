@@ -21,3 +21,6 @@ main_dir = ''
 deps_file = ''
 
 count_lines = 0
+
+deps_file = "deps_file.txt"
+very_target_file = 'result.json'

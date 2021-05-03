@@ -9,9 +9,9 @@ import re
 import json
 
 class Resolver(MRJob):
-    def drop_data_as_txt(self, file_name, name, file1, file2):
+    def drop_data_as_txt(self, file_name, name, neng, file1, file2):
         f = open(file_name, 'a', encoding='utf-8')
-        f.write(name + " from " + file1 + " ---> " + file2 +"\n")
+        f.write(name + "|" + neng + "\n")
         f.close()
 
     def easy_turn_data(self, lang, pieces):
@@ -22,7 +22,7 @@ class Resolver(MRJob):
             inm = inm.replace('\n', '')
             inm = re.sub(r'\s+', ' ', inm)
             lsecond_fixed += inm + " "
-        return lsecond_fixed
+        return lsecond_fixed, pieces
 
     def turn_data(self, lang, pieces):
         if lang == "RU":
@@ -50,7 +50,7 @@ class Resolver(MRJob):
         ft = None
         fin = False
         if pieces:
-            name = self.easy_turn_data("RU", name)
+            name, neng = self.easy_turn_data("RU", name)
             fi = open(b.main_dir + b.THERE + b.RTUD_DIR + b.THERE + b.AZON_AIM_FILE)
             for file_name in fi:
                 file_name = file_name.replace('\n', '')
@@ -67,16 +67,16 @@ class Resolver(MRJob):
                         break
             fi.close()
             if fin:
-                yield name, (line_path, ft)
+                yield (name, neng), (line_path, ft)
             else:
-                yield name, None
+                yield (name, neng), None
         else:
-            yield name, None
+            yield (name, name), None
             
     def reducer(self, name, files):
         files = list(files)
         if files != [None] and files != None:
-            self.drop_data_as_txt(b.deps_file, name, files[0][0], files[0][1])
+            self.drop_data_as_txt(b.deps_file, name[0], name[1], files[0][0], files[0][1])
 
     def steps(self):
         return [
