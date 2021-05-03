@@ -57,7 +57,11 @@ class Converter(MRJob):
     def drop_data_as_json(self, file_name, title_name, pieces):
         f = open(file_name, 'a', encoding='utf-8')
         f.write("\t\t{\n")
-        f.write("\t\t\"Name\": \"" + title_name.split(':')[0] + "\",\n")
+        f.write("\t\t\"Name\": \"" + title_name[0].split(':')[0] + "\",\n")
+        if title_name[1]:
+            f.write("\t\t\"Part\": \"" + str(title_name[1]) + "\",\n")
+        else:
+            f.write("\t\t\"Part\": \"" + "" + "\",\n")
         f.write("\t\t\"properties\": {\n")
         for i in range(0, len(pieces) - 1):
             l = pieces[i]  

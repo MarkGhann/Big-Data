@@ -2,3 +2,5 @@
 ./HTML/azon/1.txt
 ./HTML/azon/2.txt
 ./HTML/azon/3.txt
+./HTML/azon/4.txt
+./HTML/azon/5.txt

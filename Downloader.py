@@ -6,14 +6,16 @@ class Downloader:
 
     def __init__(self, sourse):
         self.area = b.area
-        self.title_name = ""
+        self.title_name = ["", None]
         self.pieces = []
         self.from_file = sourse
 
     def download_azon(self):
         f = open(b.main_dir + '/' + self.from_file, 'r')
         data = f.read()
-        self.title_name = BeautifulSoup(data, 'html.parser').find("title").text.strip()
+        self.title_name[0] = BeautifulSoup(data, 'html.parser').find("title").text.strip()
+        if len(self.title_name[0].split("Часть")) > 1:
+            self.title_name[1] = self.title_name[0].split("Часть")[1].split('–')[0]
         divs_outer = BeautifulSoup(data, 'html.parser').find_all("div", class_='styles_rowLight__3uy9z')
         for div in divs_outer:
             div_name = BeautifulSoup(str(div), 'html.parser').find("div", class_='styles_titleLight__1AL-E').text.strip()
@@ -24,7 +26,9 @@ class Downloader:
     def download_bookdepository(self):
         f = open(b.main_dir + '/' + self.from_file, 'r')
         data = f.read()
-        self.title_name = BeautifulSoup(data, 'html.parser').find("title").text.strip()
+        self.title_name[0] = BeautifulSoup(data, 'html.parser').find("title").text.strip()
+        if len(self.title_name[0].split("Часть")) > 1:
+            self.title_name[1] = self.title_name[0].split("Часть")[1].split('–')[0]
         div = BeautifulSoup(data, 'html.parser').find("div", class_="biblio-info-wrap")
         h2 = BeautifulSoup(str(div), 'html.parser').find("h2", class_="biblio-title")
         ul = BeautifulSoup(str(div), 'html.parser').find("ul", class_="biblio-info")

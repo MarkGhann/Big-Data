@@ -9,9 +9,10 @@ import re
 import json
 
 class Resolver(MRJob):
-    def drop_data_as_txt(self, file_name, name, neng, file1, file2):
+    def drop_data_as_txt(self, file_name, name, file1, file2):
         f = open(file_name, 'a', encoding='utf-8')
-        f.write(name + "|" + neng + "\n")
+        for l in name:
+            f.write(l[0] + "|" + str(l[2]) + "|" + l[1] + "\n")
         f.close()
 
     def easy_turn_data(self, lang, pieces):
@@ -49,6 +50,8 @@ class Resolver(MRJob):
         name = data['Books'][int(line_path)]["Name"]
         ft = None
         fin = False
+        part = None
+        opps = []
         if pieces:
             name, neng = self.easy_turn_data("RU", name)
             fi = open(b.main_dir + b.THERE + b.RTUD_DIR + b.THERE + b.AZON_AIM_FILE)
@@ -58,25 +61,29 @@ class Resolver(MRJob):
                 cmps = json.load(read_file)
                 d = int(cmps["Books"][-1]["Count"])
                 for j in range(0, d):
-                    cmp_name = cmps["Books"][j]["Name"].split('–')[0].split(':')[0]
+                    part = cmps["Books"][j]["Part"]
+                    cmp_name = cmps["Books"][j]["Name"]
+                    cmp_name = cmp_name.split('–')[0].split(':')[0]
                     read_file.close()
                     tr = t.Translator(b.tr_mapfile)
-                    if name.replace(' ', '') == cmp_name.replace(' ', ''):
+                    if tr.diff_cmp(name, cmp_name, 200):
                         ft = file_name
                         fin = True
-                        break
+                        ft = file_name
+                        fin = True
+                        opps.append((name, neng, part))
             fi.close()
             if fin:
-                yield (name, neng), (line_path, ft)
+                yield opps, (line_path, ft)
             else:
-                yield (name, neng), None
+                yield (name, neng, part), None
         else:
             yield (name, name), None
             
     def reducer(self, name, files):
         files = list(files)
         if files != [None] and files != None:
-            self.drop_data_as_txt(b.deps_file, name[0], name[1], files[0][0], files[0][1])
+            self.drop_data_as_txt(b.deps_file, name, files[0][0], files[0][1])
 
     def steps(self):
         return [
