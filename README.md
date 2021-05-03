@@ -18,6 +18,12 @@
 * Source data is in the RTUD dir.
 * Some nedded data provided in `deps_file.txt`
 
+### HomeWork #3
+1. Matching objects and selecting the same 
+
+* Source data is in the `deps_file.txt`.
+* Result file is the `result.json`
+
 ### How to run
 ```
 $ python3 html2ir.py
